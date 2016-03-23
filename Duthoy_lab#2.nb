@@ -1,0 +1,1919 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     84232,       1910]
+NotebookOptionsPosition[     80720,       1800]
+NotebookOutlinePosition[     81075,       1816]
+CellTagsIndexPosition[     81032,       1813]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["Math 456", "Title"],
+ "\n",
+ StyleBox["Lab #2 by Julius Duthoy", "Subchapter"],
+ "\n",
+ StyleBox["Cobweb Function", "Section"]
+}], "Text",
+ CellChangeTimes->{
+  3.655778426713503*^9, {3.655778530757246*^9, 3.6557786368192387`*^9}, {
+   3.655778756933793*^9, 3.655778915043385*^9}, {3.655779003898258*^9, 
+   3.655779004491291*^9}, {3.6557792320622263`*^9, 3.65577926713129*^9}, {
+   3.655779416830204*^9, 3.655779451219407*^9}, {3.655779814309374*^9, 
+   3.6557799264676447`*^9}, {3.655780317750449*^9, 3.655780361454033*^9}, {
+   3.655780431116556*^9, 3.655780451275638*^9}, {3.6557805538801517`*^9, 
+   3.65578063164369*^9}, {3.655780685301784*^9, 3.655780701058316*^9}, {
+   3.655780732477882*^9, 3.655780732947209*^9}, {3.655780772365985*^9, 
+   3.655780795083694*^9}, {3.6557809265738688`*^9, 3.6557809511315393`*^9}, {
+   3.65578110613424*^9, 3.65578111717947*^9}, {3.6557811513978252`*^9, 
+   3.65578118854793*^9}, {3.655781445670001*^9, 3.65578145390928*^9}, {
+   3.655781633771771*^9, 3.655781658837185*^9}, {3.655781734904459*^9, 
+   3.6557817501873817`*^9}, {3.655781783629209*^9, 3.655781842363563*^9}, {
+   3.655782044411845*^9, 3.6557820718441343`*^9}, {3.655782111059689*^9, 
+   3.655782169476102*^9}, {3.655782299022311*^9, 3.655782392372102*^9}, 
+   3.655782803401206*^9, {3.655783503845861*^9, 3.655783512405386*^9}, {
+   3.655783542805579*^9, 3.6557835628116083`*^9}, 3.655783772776391*^9, 
+   3.6557838098305798`*^9, {3.655783969533369*^9, 3.655783980947854*^9}, {
+   3.6557840140577383`*^9, 3.655784047278961*^9}, {3.655785082281052*^9, 
+   3.655785092019547*^9}, {3.65578514814872*^9, 3.655785176540354*^9}, {
+   3.6557852104806967`*^9, 3.655785228304826*^9}, {3.655865713601635*^9, 
+   3.655865916921953*^9}, {3.655865970390312*^9, 3.6558659736343813`*^9}, {
+   3.6558660187644253`*^9, 3.655866084088769*^9}, 3.655866540850788*^9, 
+   3.6558666181927423`*^9, 3.655868463569833*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cobweb", "[", 
+   RowBox[{"f_", ",", "xmin_", ",", "xmax_", ",", "n_", ",", "start_"}], 
+   "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Show", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"x", ",", 
+          RowBox[{"f", "[", "x", "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "xmin", ",", "xmax"}], "}"}]}], "]"}], ",", 
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Partition", "[", 
+          RowBox[{
+           RowBox[{"Riffle", "[", 
+            RowBox[{
+             RowBox[{"NestList", "[", 
+              RowBox[{"f", ",", "start", ",", "n"}], "]"}], ",", 
+             RowBox[{"NestList", "[", 
+              RowBox[{"f", " ", ",", "start", ",", "n"}], "]"}]}], "]"}], ",",
+            "2", ",", "1"}], "]"}], "}"}], ",", 
+        RowBox[{"Joined", "\[Rule]", "True"}], ",", " ", 
+        RowBox[{"PlotStyle", "\[Rule]", "Dashed"}]}], "]"}]}], "}"}], ",", 
+    " ", 
+    RowBox[{"AspectRatio", "\[Rule]", "Automatic"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.655778426713503*^9, {3.655778530757246*^9, 3.6557786368192387`*^9}, {
+   3.655778756933793*^9, 3.655778915043385*^9}, {3.655779003898258*^9, 
+   3.655779004491291*^9}, {3.6557792320622263`*^9, 3.65577926713129*^9}, {
+   3.655779416830204*^9, 3.655779451219407*^9}, {3.655779814309374*^9, 
+   3.6557799264676447`*^9}, {3.655780317750449*^9, 3.655780361454033*^9}, {
+   3.655780431116556*^9, 3.655780451275638*^9}, {3.6557805538801517`*^9, 
+   3.65578063164369*^9}, {3.655780685301784*^9, 3.655780701058316*^9}, {
+   3.655780732477882*^9, 3.655780732947209*^9}, {3.655780772365985*^9, 
+   3.655780795083694*^9}, {3.6557809265738688`*^9, 3.6557809511315393`*^9}, {
+   3.65578110613424*^9, 3.65578111717947*^9}, {3.6557811513978252`*^9, 
+   3.65578118854793*^9}, {3.655781445670001*^9, 3.65578145390928*^9}, {
+   3.655781633771771*^9, 3.655781658837185*^9}, {3.655781734904459*^9, 
+   3.6557817501873817`*^9}, {3.655781783629209*^9, 3.655781842363563*^9}, {
+   3.655782044411845*^9, 3.6557820718441343`*^9}, {3.655782111059689*^9, 
+   3.655782169476102*^9}, {3.655782299022311*^9, 3.655782392372102*^9}, 
+   3.655782803401206*^9, {3.655783503845861*^9, 3.655783512405386*^9}, {
+   3.655783542805579*^9, 3.6557835628116083`*^9}, 3.655783772776391*^9, 
+   3.6557838098305798`*^9, {3.655783969533369*^9, 3.655783980947854*^9}, {
+   3.6557840140577383`*^9, 3.655784047278961*^9}, {3.655785082281052*^9, 
+   3.655785092019547*^9}, {3.65578514814872*^9, 3.655785176540354*^9}, {
+   3.6557852104806967`*^9, 3.655785228304826*^9}, {3.655865713601635*^9, 
+   3.655865916921953*^9}, {3.655865970390312*^9, 3.6558659736343813`*^9}, {
+   3.6558660187644253`*^9, 3.655866084088769*^9}, {3.655866540850788*^9, 
+   3.655866558003573*^9}, {3.656017208346211*^9, 3.6560172161590033`*^9}, {
+   3.656017320705102*^9, 3.656017325797563*^9}, {3.6560174317437973`*^9, 
+   3.656017453957478*^9}}],
+
+Cell[TextData[StyleBox["1. x -> x (1 - x) on {0 <= x <= 1}", "Section"]], \
+"Text",
+ CellChangeTimes->{
+  3.655778426713503*^9, {3.655778530757246*^9, 3.6557786368192387`*^9}, {
+   3.655778756933793*^9, 3.655778915043385*^9}, {3.655779003898258*^9, 
+   3.655779004491291*^9}, {3.6557792320622263`*^9, 3.65577926713129*^9}, {
+   3.655779416830204*^9, 3.655779451219407*^9}, {3.655779814309374*^9, 
+   3.6557799264676447`*^9}, {3.655780317750449*^9, 3.655780361454033*^9}, {
+   3.655780431116556*^9, 3.655780451275638*^9}, {3.6557805538801517`*^9, 
+   3.65578063164369*^9}, {3.655780685301784*^9, 3.655780701058316*^9}, {
+   3.655780732477882*^9, 3.655780732947209*^9}, {3.655780772365985*^9, 
+   3.655780795083694*^9}, {3.6557809265738688`*^9, 3.6557809511315393`*^9}, {
+   3.65578110613424*^9, 3.65578111717947*^9}, {3.6557811513978252`*^9, 
+   3.65578118854793*^9}, {3.655781445670001*^9, 3.65578145390928*^9}, {
+   3.655781633771771*^9, 3.655781658837185*^9}, {3.655781734904459*^9, 
+   3.6557817501873817`*^9}, {3.655781783629209*^9, 3.655781842363563*^9}, {
+   3.655782044411845*^9, 3.6557820718441343`*^9}, {3.655782111059689*^9, 
+   3.655782169476102*^9}, {3.655782299022311*^9, 3.655782392372102*^9}, 
+   3.655782803401206*^9, {3.655783503845861*^9, 3.655783512405386*^9}, {
+   3.655783542805579*^9, 3.6557835628116083`*^9}, 3.655783772776391*^9, 
+   3.6557838098305798`*^9, {3.655783969533369*^9, 3.655783980947854*^9}, {
+   3.6557840140577383`*^9, 3.655784047278961*^9}, {3.655785082281052*^9, 
+   3.655785092019547*^9}, {3.65578514814872*^9, 3.655785176540354*^9}, {
+   3.6557852104806967`*^9, 3.655785228304826*^9}, {3.655865713601635*^9, 
+   3.655865916921953*^9}, {3.655865970390312*^9, 3.6558659736343813`*^9}, {
+   3.6558660187644253`*^9, 3.655866084088769*^9}, {3.655866540850788*^9, 
+   3.655866558003573*^9}, 3.655868510069541*^9}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.655868696329076*^9, 3.6558686963434677`*^9}, {
+  3.65601739501615*^9, 3.65601740297731*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.8"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6558687540983753`*^9, 3.655868927552949*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.656127856515942*^9, 3.656127856541815*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "1.0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.655869059786293*^9, 3.655869087617379*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "0.1", ",", " ", "5", ",", " ", "0.05"}], "]"}]], "Input",
+ CellChangeTimes->{{3.655869128219554*^9, 3.6558691495925703`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Attracting Fixed Points:", "Subsubsection"],
+ " x=0\n",
+ StyleBox["Characteristics:", "Subsubsection"],
+ "\nCobweb diagram iterates towards the fixed point. \nThere are no \
+trajectories on [0,1] that are not attracted to x=0. \n",
+ StyleBox["Starting points\n", "Subsubsection"],
+ "- x=0.5 was chosen since it is at the local maximum where f\
+\[CloseCurlyQuote](x)=0. Nevertheless, the cobweb diagram indicates that the \
+point x=0.5 maps closer to x=0 with every iterate. \n- x=0.8 was chosen as a \
+representative point where f\[CloseCurlyQuote](x)<0 on the interval [0,1]. \
+The cobweb indicates that this point too moves closer to x=0 with every \
+iterate. We notice that points closer to x=1 on [0.5,1] in fact map closer to \
+x=0 in a single iterate. \n- x=1 was chosen since its image is 0 which is \
+also the fixed point, that is f(1)=0=f(0).  \n- x=0.05 was chosen to clearly \
+see if the map lies above or below the line y=x closer to the fixed point \
+f(0)=0. We see that it ineed lies above y=x, and that the cobweb does show \
+that the point x=0.05 iterates toward x=0. ",
+ StyleBox["\nRepelling Fixed Points:", "Subsubsection"],
+ " None\n",
+ StyleBox["Conjectures on Global Dynamics\n", "Subsubsection"],
+ "There exist only one fixed point at x=0. The basin of attraction is the \
+closed interval [0,1]. Points on (-inf, 0) are repelled off/attracted to \
+-inf. Points on (1,inf) are mapped to the interval (-inf, 0) in one \
+iteration, and are also repelled off to -inf.  "
+}], "Text",
+ CellChangeTimes->{{3.655869440378883*^9, 3.655869561279372*^9}, 
+   3.655869756252988*^9, {3.655988592644086*^9, 3.6559886829298277`*^9}, {
+   3.6559887340363903`*^9, 3.6559887637618933`*^9}, {3.6559888912499533`*^9, 
+   3.655988947225873*^9}, {3.65598903641812*^9, 3.655989101010785*^9}, {
+   3.655989236234004*^9, 3.655989302210087*^9}, {3.655989334674181*^9, 
+   3.6559895415869217`*^9}, {3.655989628194941*^9, 3.655989740042863*^9}, {
+   3.655989809680189*^9, 3.655989839708276*^9}, {3.655989929215695*^9, 
+   3.655990006115011*^9}, {3.655990051378949*^9, 3.6559901016124268`*^9}}],
+
+Cell[TextData[StyleBox["2. x->2x(1-x) on {0<=x<=1}", "Section"]], "Text",
+ CellChangeTimes->{{3.655869440378883*^9, 3.655869561279372*^9}, {
+   3.655869756252988*^9, 3.655869784056272*^9}, {3.655990238674189*^9, 
+   3.6559902624261417`*^9}, 3.655990301062914*^9}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.655869440378883*^9, 3.655869561279372*^9}, {
+   3.655869756252988*^9, 3.655869784056272*^9}, {3.655990238674189*^9, 
+   3.6559902624261417`*^9}, {3.655990301062914*^9, 3.655990347659635*^9}, 
+   3.6560171585911093`*^9, {3.656017348894307*^9, 3.656017359136395*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656017579094933*^9, 3.6560175793729067`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.7"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656017614670589*^9, 3.656017614948926*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6560176398146257`*^9, 3.656017640548779*^9}}],
+
+Cell[TextData[{
+ StyleBox["Attracting Fixed Points:", "Subsubsection"],
+ " x=0.5\n",
+ StyleBox["Characteristics:", "Subsubsection"],
+ "\nCobweb diagram iterates towards the fixed point. \nThe only trajectories \
+not attracted to the fixed point x=0.5 is the fixed point x=0 and the point \
+x=1. However, the image of x=1 is f(1)=0=f(0). In other words, x=1 maps \
+directly to the fixed point x=0.  \n",
+ StyleBox["Starting points\n", "Subsubsection"],
+ "- x=0.2 was chosen as a representative point where x=0.2<0.5 and \
+f(0.2)<f(0.5) with f(x) increasing, or f\[CloseCurlyQuote](x)>0 on (0,0.5). \
+The cobweb indicates that this point moves closer to x=0.5 with every \
+iterate. \n- x=0.5 was chosen since it is the attracting fixed point itself. \
+We may note that f\[CloseCurlyQuote](0.5)=0 as well. As expected, there is no \
+cobweb since it is fixed and each map simply stays at the point (0.5,0.5).   \
+\n- x=0.7 was chosen as a representative point where x=0.7>0.5 and \
+f(0.7)>f(0.5) with f(x) decreasing, or f\[CloseCurlyQuote](x)<0 on (0.5,0). \
+The cobweb indicates that this point maps to the interval (0.0.5) in one \
+iterate. It then is mapped closer to the attracting fixed point x=0.5 with \
+every iterate.   \n- x=1 was chosen since it\[CloseCurlyQuote]s image is the \
+same as that of the fixed point x=0. In other words f(1)=f(0)=0. As expected \
+the cobweb indicates that x=1 maps directly to the fixed point x=0. ",
+ StyleBox["\nRepelling Fixed Points:", "Subsubsection"],
+ " x=0\nEach starting point repelled away from x=0 except for x=1, which had \
+the same image as x=0. \n",
+ StyleBox["Conjectures on Global Dynamics\n", "Subsubsection"],
+ "There exist 2 fixed points on the interval [0,1]. The basin of attraction \
+for the point x=0.5 is the open interval (0,1). Points on (-inf, 0) are \
+repelled off/attracted to -inf. Points on (1,inf) are mapped to the interval \
+(-inf, 0) in one iteration, and are also repelled off to -inf.  The only \
+points mapped onto the repelling fixed point x=0 are x=0 itself and x=1. "
+}], "Text",
+ CellChangeTimes->{{3.656017684559454*^9, 3.656018316045515*^9}, {
+  3.656018355829762*^9, 3.656018718516608*^9}, {3.656020524557116*^9, 
+  3.656020525141343*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["3. x-> 4x(1-x) on {0<=x<=1}", "Section"]], \
+"Subsubsection",
+ CellChangeTimes->{{3.656017684559454*^9, 3.656018316045515*^9}, {
+  3.656018355829762*^9, 3.6560187581953506`*^9}, {3.656018791656402*^9, 
+  3.65601879900585*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "13", ",", " ", "0.1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656017684559454*^9, 3.656018316045515*^9}, {
+  3.656018355829762*^9, 3.6560187581953506`*^9}, {3.656018791656402*^9, 
+  3.656018834933041*^9}, {3.6560189890554657`*^9, 3.6560189898849697`*^9}, {
+  3.656019071270898*^9, 3.656019073692902*^9}, {3.65601911544739*^9, 
+  3.656019125181014*^9}, {3.6560192264155807`*^9, 3.656019260484908*^9}, {
+  3.656020636429903*^9, 3.656020691709016*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.65612784844031*^9, 3.6561278484515457`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.15"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656019038895554*^9, 3.656019039342511*^9}, {
+  3.656019328719666*^9, 3.6560193467095623`*^9}, {3.656019379529099*^9, 
+  3.656019441988903*^9}, {3.65601975216754*^9, 3.656019783132917*^9}, {
+  3.6560207132247553`*^9, 3.656020725637055*^9}, {3.656020756823421*^9, 
+  3.65602078219939*^9}, {3.6560208225833483`*^9, 3.656020904557085*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6561278397113953`*^9, 3.6561278397225523`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Interval (0, 0.15) L->L\n",
+ StyleBox["On this interval the first iterate is mapped back onto (0, 0.5), \
+the left side of the interval. Clearly the end point (not included in the \
+interval) x=0 is fixed and does not move from this point when iterated. The \
+end point x=0.15 maps to the maximum point x=0.5 which maps to x=1. In turn, \
+the point x=1 maps back to the end point x=0. In other words f(0.15)=0.5, \
+f(0.5)=0, and f(0)=0 fixed. Note that f\[CloseCurlyQuote](0.5)=0. ", "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsubsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656019041457807*^9, {3.656019332156768*^9, 3.65601934865265*^9}, {
+   3.656019381777729*^9, 3.6560194433406*^9}, {3.656019755439392*^9, 
+   3.6560197847418013`*^9}, 3.656020727964909*^9, {3.6560207591833572`*^9, 
+   3.656020783560093*^9}, {3.6560208274070797`*^9, 3.656020906029563*^9}, {
+   3.656021523858667*^9, 3.6560215572130136`*^9}, {3.656021828945821*^9, 
+   3.656021892916759*^9}, {3.656021927548921*^9, 3.656022005588888*^9}, {
+   3.656022070356914*^9, 3.656022213069059*^9}, {3.6560222518560534`*^9, 
+   3.656022265309433*^9}, {3.656023009702889*^9, 3.656023013118972*^9}, {
+   3.656037773423637*^9, 3.65603777866544*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.25"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656019962278784*^9, 3.656019962708919*^9}, 
+   3.656020920046021*^9}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656020018669364*^9, 3.656020067414723*^9}, {
+  3.656021014455875*^9, 3.6560210148369303`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.656127852256612*^9, 3.656127852268506*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Interval (0.15, 0.5) L->R\n",
+ StyleBox["On this interval points are mapped from the left to the right side \
+(0.5, 1). We may note that x=0.25 (not part of the interval) directly maps to \
+the fixed point x=0.75.", "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsubsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.656020023528885*^9, 3.656020069831698*^9}, 
+   3.656021015993135*^9, {3.656022842572689*^9, 3.656022974119917*^9}, {
+   3.6560230216211853`*^9, 3.6560230239009733`*^9}, {3.656037760152584*^9, 
+   3.6560377643693247`*^9}, 3.6561279075609913`*^9}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.75"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656020090511621*^9, 3.656020090926477*^9}, {
+  3.656021032374197*^9, 3.65602103369304*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"cobweb", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"4", "#", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+    ",", " ", "1", ",", " ", "13", ",", "0.8"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.656021038118726*^9, 3.6560210565251904`*^9}, {
+  3.656021097029922*^9, 3.656021135590721*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.7"}], "]"}]], "Input",
+ CellChangeTimes->{3.656021239696471*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.85"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656021369622493*^9, 3.6560213708132353`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1:eJxFxXss1AEcAPDDVnlOltPPjOiyYWKcNhWpRNJV7oiaZF7LKFq0rtqadJY8
+IlbRaXROJXMnKpXH4eZUdJw7brrunM77cjHHZh7VH77fPz77OMal0RMNSSQS
+7Z//n0icGhBMR/hvPll/Nk5FUA9tTjaVFTYSgfBe3x3cCiIc3t/vzX9EJMCC
+Z10+BUQGnJ2Vd+MBcQ9OyNARuUQpvK00pOrPfDX8od8rONieB0dlK0a68prg
+tIZr7k8XP8ILRUM9BgbtcE9Hd7v4YCeczAwxP6cVwh3GXht1l0VwDUe4brvn
+KxxAbn3BqO+F3UWK5m5XMSwNYMy9nuuHU01SJDJPCfxNHtlqUTgIM4Ki1BqN
+FN5XmRdZSRmCR9dLpJfuDMPjIWIOuUsO88tUzAHHEZh73yjX5eYPWB9/fibp
+swI2DcyhN9go4duW42bqaBVs1uZGGqaNwn7XT691reDs6nzObrYajomg9hmH
+jsHvZIklbUu4by/fcOLxL3jXsSR9SaAG9qH6FDdN4KqFgi8c1jis9Q5jEV4T
+sPOs+4zBIC6kZErSsybhh1JZPJ0yBesYgmJDIf42wvqo79VpmNOXXTFmNQMv
+i6JvWXXio8Xtessrs/DSwAHiroUWTi91EjBbcJs+J0tNzG+YIatbtVvHFy5W
+pSpq5+D2WB7L4qQO/iRODVWewt/7u26vD8Pr7LhsWiReLi9vzI/DM8/kqE2Y
+uFvABb+tNbgzz9Zo+BXuZC/vqXmD71ylhwc14Fuaj6ewWnC1B7XMaBBXPJ+P
+GZThcnMehSPHv8+68I8o8ZaXDqKsabyZ/DM/TIs3ssrpjjq8Nt5aKVjEuRIJ
+p2gZrzxclBy7grP5NA/PNfyJg6l+YwP/CxUIhds=
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1: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
+vhRYLEcFpUkG0cvlqaxbFKzYsR92Ehv94kmk36MwJlLz1ZE42ff25aRHFHz+
+amx8TXzA+EBqXBSFc9mH4quIZyxSbomKo+Ce6OfBEB9/kW8YlkKhUbT2pvIU
+yYfzgZ6B6RS0/UezQZynfzj99hsKSaulbfYTO85c2e73noKu8IaLZ4llqkcX
+eedRoMQPCVwnLo0o2u3xhUL8jkt894nd7cK8LpaS86SGnkskVtE4lulSQcHD
+4OXeN8Q/RjW6ztZSCBb6klJI7Pt5QtqhkULeGOtCFbH2nW8mthwKwkuYDDZx
+y95wH5tWCs6O/LYdxEFLT7w92EWhnyd+k0es/1OnZ28fhYBouSXDxH2vBZbu
+GaCwxVNNeYw40qPSbPdvCuIB6+ImiHdui76xfZzCRPHm4CnicaE1h2P5aAjq
+GA7+59pemd+ygjQUK4xLJolfVAkGR06ncSTcTGyc+PqbbtXFM2m8DbH49pvY
+MqKq8KEwjRXvLf78Itb0eme9QJRGloT5425iIbuY0ZC5NA6Hm6RyiTmGN0LE
+JGgsNdmpW0+cpX521b35NMa1DTS+Ed+ZZ1E0W5LG0Ha9yI/EtqN6R25J0ZgR
+oOGRSvxPs/zYDBkaOhMKFVH/vb/PM8N8ZWl4RM+/H0DcncioCcjToBynlV8k
+fuT88eiEEo2RSM6jXcROexP+XlahkTxWoqpNvE0v4P6oKg33m+kaUsTDgpZf
+BzVo2Kt7htCkXr534fg5LRp+O4705xMnlClP8HRo5AZvzo8lNns4pNm9noZv
++uR7K+IVHk2lJzbQmOPPal9LzHf0s227Po2Mu5nXxYlfqQY9og1oGCsfX5BH
+6l3k00q+eiMaRXeSo4WJ+3bLZd42pfEt3l+ujvRTedP8k/rmNOI8VlREEQf+
+mah4eoDGZ9eM1yuIJXQrY9yO06i82BWykvTnYEGhuYo9Deso9uVO0t+1ZtlC
+7JM0PvmGBsYS33eOczJwpPHrkSHEiBeluEHCnYZy/Y+39SRP/ug5DH65QkN/
+Nne6HzHr6+Ek96s0lvOnemkSR3Rum8v1oXFWK2jcm+SR7DIp6tU9GiXJ50Xn
+krxSfPzxqlECjTcDhaFVAwymr3itxZ9Eo8Xg78ujxB1vEzsyn9Pg7BsaYn4x
+SKoLNJZ5RWPnZ/VZQsSq4sdke7LJ+VILdy4leavpP+OTfwWNS5Sb1mg3A3HJ
+v+c2VJP6M6pfdJp44Cmj1F9L7s9zfCX7J4OMgoa7+1k0LJcFNrzrIvkzlXxY
+uZ3Gbt+6nVYdDDZeMJkoGKNxJqojdBeXzM9TXVcMJ8h9/riWlUIzSLPxHiuf
+opG/VXuTCLGCYcbvxmlcvP/UFVTEYTBTRnKAmcNFuOq9pSpscr/5nA7pZVxM
+b/n8K/oHg3tvLtrFKnHRbTeV0FHHYPsLsTZlFS7cZfflryLOCdvCXa3GRYia
+mW5mDYMnJxKbtq/l4lWBr3BaJYMzoo6Vrru4eFhR43CIzFdlASGTP0ZciERn
+pN76yoAaiSm7asrFytiXVm9KSP3RVaW39nJx7N/+QeFiBusydL/E2HDxaXra
+3Fgyr6dZTmR/c+VCwV5q3IvM+8iEO/HLIrlIehr6bO5LBjYG2huoaC4sZtYq
+D5P9QqGlsfZxLBdFKUuKG8j+8Wzp8hkSSVyM5nw/+/gZg8zH+Sf5XnMR2htu
+LpRA+iNoRK25mIsXCf1eNx+TfcHjyLsHg1xYnQw8Jk/2ozxpoT1mI1zECI7K
+f/MleZfz8qfoHy4SaQdBVx8GwqNji/0muRA84rDqoxeDha73PV1ntWDEtX7h
+P1cYqDuUbjFd2oIP/U5GzU4MrPfqlM3a1YJvG0M2v99P5qG00ZN3Ri14/E05
+SnMfg6NcO9cTpi3I3D93VYIFyY+zD6W+7G1B0Sl2q98eBg5+Y3ZeR1pg52H/
+XnsXA7esvMmR8y0INNITXq/P4PYCI822Jy0ISqKVuxVIPtXZhX4aaYGxnopV
+RwcPQfzLVuNPCwTul3QKt/NwSo0uz/3bgsHk+Ba1Vh5k/Q4K5/O14u5MYWUn
+iocbOibeBcKtCL/9sJVTz8O+0HVOJbKtkEzOWu9awsNv09m7qre1ImXf5B4n
+ss+v/54m0PGgFTr2+VpZx3mQibuSExneiria7c1bye8FvkvbXMwjWyHP55FW
+bc1DyTI2Ny+2FYce9FV2WZLvvyKUH5HSiqy3w38mTXhwUbW+tudzK/jLw3ur
+/+EhxX/2+Ie+VoztWG0hJcGD3L/2w6Fb2+B6KWqVXHYfdHV0gzM72tBTvNnU
+eKoX1MDdr/F+7XB6KFSlp9mLXu09flJaHVi15/VojHYPlHvUuvlrOpCXkR2R
+q9aNQsXz1c7endgfP6q1e7gLgbV1x80Uu9Br7G3y5k0nGPO8YIHCLlRnPrJe
+Z9eB13sXGKw/9xMHZlRkjbPaEF/mE9Ui0Q3Jw9bcSNNW/C62uiLxuRsJ/875
+dtafCzo4d1jMsQfHdhvPK99HYaTqH6nrc3rxaubRr5+eNcE5TCHP/UMvEmeo
+fnBzqYdkmYJYm3UffNZa+Z0yroF5Xcq4zGQfbgZy7U8uLseATewZNvndZK6k
+aNrnWIjcI6/85uwmdRePrIypLORUnNnFMWbw0mXLQOLzLLzRVxVP/a+Owmpt
+bptnIUXmaaQRqUP1isTv8kmZeNzwOOPOMQa5coJ9IUYZOG96gyvszkBMN2LH
+1YdpWLnp8EahRDIHDUJ+DOgnQvnVYsF60ldR7mfc2u89hYJsQ0ki6cNqczvX
+d5wELBo3s9iWzqB55HXYlGc8ZrzbcdqP9PH40EdbifdPwNXQCRckOaKVpHQ+
+zPoB2NG/rGtIzjg9T631GwtDg+grxfgGskcOuY2sfRCK8p4VaVtIjqmfzPbi
+fA/Ch6Slxd4kN2uvGhxxcLyBdwub7+whe/AcKVWDA3E+yPB7bCZPclhue0By
+SZ0Xko8v4OSRPfZ+1mVRqwsX8LS6Oj6IzIGS6zK//2U548nmIIcjZK5Y9NjX
+2F22R2SakYYmmWtDmpNhAR778HDp7OH/9oxMg2v//z/kf0lPInY=
+      
+      "]]}}, {{}, {{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], Dashing[{Small, Small}],
+       LineBox[{{0.85, 0.85}, {0.85, 0.51}, {0.51, 0.51}, {0.51, 0.9996}, {
+       0.9996, 0.9996}, {0.9996, 0.001599359999999824}, {0.001599359999999824,
+        0.001599359999999824}, {0.001599359999999824, 0.006387208190360898}, {
+       0.006387208190360898, 0.006387208190360898}, {0.006387208190360898, 
+       0.02538564704757554}, {0.02538564704757554, 
+       0.02538564704757554}}]}}, {}}},
+  AspectRatio->Automatic,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None},
+  PlotRange->{{0, 1}, {0., 0.9999999795918367}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{3.656021372599242*^9, 3.6560217248747253`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Interval (0.5, 0.85) R->R\n",
+ StyleBox["On this interval points are mapped back onto the right side (0.5, \
+1). However, we also note that the point x=0.75 is fixed and, thus, \
+continually maps back to itself on this interval. We may also note that the \
+endpoint x=0.5, which is not included, maps to x=0 in 2 iterates as we stated \
+earlier. The other endpoint, x=0.85 maps to 0.5 which, as we just mentioned, \
+will map to x=0. ", "Text",
+  FontColor->GrayLevel[0]],
+ "\n"
+}], "Subsubsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656021372599242*^9, {3.6560217248747253`*^9, 3.6560217631651154`*^9}, {
+   3.6560223513918457`*^9, 3.656022438868773*^9}, {3.656022742080079*^9, 
+   3.656022793404759*^9}, {3.656022969200447*^9, 3.6560229694853277`*^9}, {
+   3.656023038093889*^9, 3.65602303923794*^9}, {3.656037539717433*^9, 
+   3.6560375415446672`*^9}, {3.65603757352067*^9, 3.656037631111697*^9}, {
+   3.656037686440627*^9, 3.65603774405702*^9}, {3.65603778802492*^9, 
+   3.6560379184732428`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "5", ",", " ", "0.9"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6560213889124727`*^9, 3.6560213896781883`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Interval (0.85, 1) R->L\n",
+ StyleBox["On this interval points are mapped onto the left side (0, 0.5) in \
+one iteration. Of course, as we have stated, x=1 maps directly to x=0. ", 
+  "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["\n", "Text"],
+ StyleBox["Global Dynamics\n", "Subsection"],
+ StyleBox["If we drew the transition graph for the map we would find that it \
+is fully connected, meaning all possible sequences of L and R are possible. \
+This implies that ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["the map has periodic solutions of every period", "Text",
+  FontSlant->"Italic",
+  FontColor->GrayLevel[0]],
+ StyleBox[".  However, from trying various starting points some eventually \
+map to the fixed point x=0 and some map to the fixed point x=0.75. Yet, \
+neither are attracting.  Still, any starting point on [0,1] stays on [0,1]. \
+Therefore, the interval itself is fixed in a way (it is a self map). Outside \
+of the interval (0,1), Points on (-inf, 0) are repelled off/attracted to \
+-inf. Points on (1,inf) are mapped to the interval (-inf, 0) in one \
+iteration, and are also repelled off to -inf.", "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.6560217796266613`*^9, 3.656021806566146*^9}, {
+   3.656037940096354*^9, 3.656037973631604*^9}, {3.656038405541593*^9, 
+   3.656038509288946*^9}, {3.656038780436544*^9, 3.656038841153039*^9}, {
+   3.656038882738772*^9, 3.6560390377048397`*^9}, {3.656039141069379*^9, 
+   3.656039212913534*^9}, {3.656039369621516*^9, 3.656039378177478*^9}, {
+   3.656039439003345*^9, 3.656039446906699*^9}, {3.656039615682167*^9, 
+   3.656039643969784*^9}, 3.6560397605112753`*^9, {3.656040972492034*^9, 
+   3.656041033050234*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "4. x->2.9x(1-x) on ",
+ StyleBox["{0<=x<=1}", "Section"]
+}], "Section",
+ CellChangeTimes->{{3.6560217796266613`*^9, 3.656021806566146*^9}, {
+   3.656037940096354*^9, 3.656037973631604*^9}, {3.656038405541593*^9, 
+   3.656038509288946*^9}, {3.656038780436544*^9, 3.656038841153039*^9}, {
+   3.656038882738772*^9, 3.6560390377048397`*^9}, {3.656039141069379*^9, 
+   3.656039212913534*^9}, {3.656039369621516*^9, 3.656039378177478*^9}, {
+   3.656039439003345*^9, 3.656039446906699*^9}, {3.656039615682167*^9, 
+   3.656039643969784*^9}, {3.6560397605112753`*^9, 3.656039832661017*^9}, 
+   3.656039928062883*^9}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2.9", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "10", ",", " ", "0.22"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6560217796266613`*^9, 3.656021806566146*^9}, {
+  3.656037940096354*^9, 3.656037973631604*^9}, {3.656038405541593*^9, 
+  3.656038509288946*^9}, {3.656038780436544*^9, 3.656038841153039*^9}, {
+  3.656038882738772*^9, 3.6560390377048397`*^9}, {3.656039141069379*^9, 
+  3.656039212913534*^9}, {3.656039369621516*^9, 3.656039378177478*^9}, {
+  3.656039439003345*^9, 3.656039446906699*^9}, {3.656039615682167*^9, 
+  3.656039643969784*^9}, {3.6560397605112753`*^9, 3.656039865681385*^9}, {
+  3.656070005485661*^9, 3.656070006187997*^9}, {3.65607026639876*^9, 
+  3.656070296740045*^9}, {3.656070397406582*^9, 3.6560704377318373`*^9}, {
+  3.656070476886654*^9, 3.656070494883582*^9}, {3.656074272943676*^9, 
+  3.656074367508271*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6560743773514643`*^9, 3.656074377362718*^9}}],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Interval", " ", 
+    RowBox[{"(", 
+     RowBox[{"0", ",", " ", "0.22"}], ")"}], " ", "L"}], "\[Rule]", "L"}], 
+  "Subsubsection",
+  FontWeight->"Plain"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"On", " ", 
+    StyleBox["this", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[" ", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[
+     RowBox[{
+      StyleBox[
+       StyleBox["i", "Text",
+        FontColor->GrayLevel[0]], "Text",
+       FontColor->GrayLevel[0]], "nterval"}]], " ", 
+    StyleBox["the", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[" ", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[
+     RowBox[{
+      StyleBox[
+       StyleBox["p", "Text",
+        FontColor->GrayLevel[0]], "Text",
+       FontColor->GrayLevel[0]], "oints"}]], " ", 
+    StyleBox["are", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[" ", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[
+     RowBox[{
+      StyleBox[
+       StyleBox["m", "Text",
+        FontColor->GrayLevel[0]], "Text",
+       FontColor->GrayLevel[0]], "apped"}]], " ", 
+    StyleBox["back", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[" ", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[
+     RowBox[{
+      StyleBox[
+       StyleBox["o", "Text",
+        FontColor->GrayLevel[0]], "Text",
+       FontColor->GrayLevel[0]], "nto"}]], " ", 
+    StyleBox["the", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[" ", "Text",
+     FontColor->GrayLevel[0]], 
+    StyleBox[
+     RowBox[{
+      StyleBox[
+       StyleBox["l", "Text",
+        FontColor->GrayLevel[0]], "Text",
+       FontColor->GrayLevel[0]], "eft"}]], " ", 
+    StyleBox["side", "Text",
+     FontColor->GrayLevel[0]], " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"0", ",", " ", 
+       StyleBox[
+        RowBox[{
+         StyleBox[
+          StyleBox["0", "Text",
+           FontColor->GrayLevel[0]], "Text",
+          FontColor->GrayLevel[0]], ".5"}]]}], ")"}], ".", " ", "However"}]}],
+    ",", 
+   RowBox[{
+    RowBox[{
+    "these", " ", "points", " ", "are", " ", "eventually", " ", "mapped", " ",
+      "closer", " ", "and", " ", "closer", " ", "to", " ", "the", " ", 
+     "point", " ", "x"}], "=", "0.655"}], ",", " ", 
+   RowBox[{
+    RowBox[{"the", " ", "fixed", " ", 
+     RowBox[{"point", ".", " ", "The"}], " ", "end", " ", "point", " ", "x"}],
+     "=", 
+    RowBox[{
+     RowBox[{"0.22", " ", "which", " ", "maps", " ", "to", " ", "x"}], "=", 
+     "0.5"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{
+    "also", " ", "iterates", " ", "closer", " ", "to", " ", "the", " ", 
+     "fixed", " ", "point", " ", "x"}], "=", 
+    RowBox[{"0.655", ".", " "}]}]}], "Text",
+  FontWeight->"Plain",
+  FontColor->GrayLevel[0]]}], "Text", "Input",
+ CellChangeTimes->{{3.6560705453809547`*^9, 3.656070567339698*^9}, {
+   3.656070598490617*^9, 3.656070666971744*^9}, {3.6560707145650873`*^9, 
+   3.656070735540073*^9}, 3.6560707684712257`*^9, {3.656070800118051*^9, 
+   3.6560708677045937`*^9}, {3.656071083565907*^9, 3.6560710844846783`*^9}, 
+   3.6560712172485523`*^9, 3.656074041175894*^9, {3.656077701084066*^9, 
+   3.656077710449279*^9}, 3.6560804747327747`*^9, {3.6560806110990868`*^9, 
+   3.656080798274873*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Interval", 
+    RowBox[{"(", 
+     RowBox[{"0.22", ",", "0.5"}], ")"}], " ", "L"}], "\[Rule]", "R"}], 
+  "Subsubsection",
+  FontWeight->"Plain"], "\[IndentingNewLine]", 
+ RowBox[{
+  StyleBox[
+   RowBox[{
+   "On", " ", "this", " ", "interval", " ", "the", " ", "points", " ", "are", 
+    " ", "mapped", " ", "from", " ", "the", " ", "left", " ", "side", " ", 
+    "to", " ", "the", " ", "right", " ", "interval", " ", 
+    RowBox[{"(", 
+     RowBox[{"0.5", ",", "0.77"}], ")"}]}], "Text",
+   FontWeight->"Plain",
+   FontColor->GrayLevel[0]], 
+  StyleBox[",", "Text",
+   FontWeight->"Plain",
+   FontColor->GrayLevel[0]], 
+  StyleBox[" ", "Text",
+   FontWeight->"Plain",
+   FontColor->GrayLevel[0]], 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+    "which", " ", "moves", " ", "closer", " ", "to", " ", "the", " ", "fixed",
+      " ", "point", " ", "x"}], "Text",
+    FontWeight->"Plain",
+    FontColor->GrayLevel[0]], 
+   StyleBox["=", "Text",
+    FontWeight->"Plain",
+    FontColor->GrayLevel[0]], 
+   RowBox[{
+    StyleBox["0.655", "Text",
+     FontWeight->"Plain",
+     FontColor->GrayLevel[0]], 
+    StyleBox[".", "Text",
+     FontWeight->"Plain",
+     FontColor->GrayLevel[0]], " "}]}]}]}], "Subsection", "Input",
+ CellChangeTimes->{{3.6560705453809547`*^9, 3.656070567339698*^9}, {
+   3.656070598490617*^9, 3.656070666971744*^9}, {3.6560707145650873`*^9, 
+   3.656070735540073*^9}, 3.6560707684712257`*^9, {3.656070800118051*^9, 
+   3.6560708677045937`*^9}, {3.656071083565907*^9, 3.6560710844846783`*^9}, {
+   3.6560712172485523`*^9, 3.6560712453799686`*^9}, {3.656080987885427*^9, 
+   3.6560810462665663`*^9}, {3.6560811395308113`*^9, 3.6560811906263103`*^9}},
+ 
+ EmphasizeSyntaxErrors->True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2.9", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "10", ",", " ", "0.77"}], "]"}]], "Input", "Input",
+ CellChangeTimes->{{3.6560705453809547`*^9, 3.656070567339698*^9}, {
+   3.656070598490617*^9, 3.656070666971744*^9}, {3.6560707145650873`*^9, 
+   3.656070735540073*^9}, 3.6560707684712257`*^9, {3.656070800118051*^9, 
+   3.65607093395572*^9}, {3.656071123901703*^9, 3.656071148636258*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1:eJxFxXss1AEcAPDDVnlOltPPjOiyYWKcNhWpRNJV7oiaZF7LKFq0rtqadJY8
+IlbRaXROJXMnKpXH4eZUdJw7brrunM77cjHHZh7VH77fPz77OMal0RMNSSQS
+7Z//n0icGhBMR/hvPll/Nk5FUA9tTjaVFTYSgfBe3x3cCiIc3t/vzX9EJMCC
+Z10+BUQGnJ2Vd+MBcQ9OyNARuUQpvK00pOrPfDX8od8rONieB0dlK0a68prg
+tIZr7k8XP8ILRUM9BgbtcE9Hd7v4YCeczAwxP6cVwh3GXht1l0VwDUe4brvn
+KxxAbn3BqO+F3UWK5m5XMSwNYMy9nuuHU01SJDJPCfxNHtlqUTgIM4Ki1BqN
+FN5XmRdZSRmCR9dLpJfuDMPjIWIOuUsO88tUzAHHEZh73yjX5eYPWB9/fibp
+swI2DcyhN9go4duW42bqaBVs1uZGGqaNwn7XT691reDs6nzObrYajomg9hmH
+jsHvZIklbUu4by/fcOLxL3jXsSR9SaAG9qH6FDdN4KqFgi8c1jis9Q5jEV4T
+sPOs+4zBIC6kZErSsybhh1JZPJ0yBesYgmJDIf42wvqo79VpmNOXXTFmNQMv
+i6JvWXXio8Xtessrs/DSwAHiroUWTi91EjBbcJs+J0tNzG+YIatbtVvHFy5W
+pSpq5+D2WB7L4qQO/iRODVWewt/7u26vD8Pr7LhsWiReLi9vzI/DM8/kqE2Y
+uFvABb+tNbgzz9Zo+BXuZC/vqXmD71ylhwc14Fuaj6ewWnC1B7XMaBBXPJ+P
+GZThcnMehSPHv8+68I8o8ZaXDqKsabyZ/DM/TIs3ssrpjjq8Nt5aKVjEuRIJ
+p2gZrzxclBy7grP5NA/PNfyJg6l+YwP/CxUIhds=
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1: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
+q1W+31B7IFkyzJyN9Nqgezy5bnxo+mBdIMrCSNWe83JlxIXNNSuPtoK68XZo
+5vHvcBv5FB9W8hXDDasVrkj3YN7ghP1VqWb4xKqVnnvVg2TZlV+qJuoxt1Zt
+ZufeXsztHmVe/vsJjl9y/ij97YXly1sbFzVVYGBf6lFW9g+U1MUrMlJe4+3+
+/BDpzULyXVtXOcLPx4u6o5vYW4SYPXhObplXPp5a6Mrm2QvxN32X746ePOQo
+ZSbaOZH+OW88nQZyEc+IL444ICR1W9Ziw/gjnN4Wyp12Toi+Gdwr7dIPoLfG
+1VwyS4jP03RPf1VJgWa+onjLAyHCO0y2HrJMhtpCxoesR0L0K4cy+y2TMO+P
+w3brQiEG+V7uAVaJkCjZcCTklRCm6dbrT1neAdfA6K54kxCT6O2rK1ZEg5XU
+v7fpixD+luNSlkciwZDK10hnCNEepzNw71AEPn/XKbBkCyHTMiPVck8YXt1X
+rgr8Rt7/cvwOrC6jZE57hH2PEEJzwyXLz15AcUi8g6pQiJelc8oNvM4i+6A8
+u/SnEK3Do6/EbH2Q2diYHj1CxuP0DUXenkhZG+21f4zEY8W6VX2b9iOxwM7A
+cFyIwjmTay7ZbcNt5elDExNC6Kk1/v9/yP8AtnOd9w==
+      "]]}}, {{}, {{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], Dashing[{Small, Small}],
+       LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQvaTAluv64hf26LTV+o3eIfkPcNIfJvb/PK/3HCc9
+SeSeknXbI5x05dtlj2LmP8NJ1/eyXtls+Rgnzbj+QuUNx2c46bmueqtuL3uM
+kz5mnT3nwt+nOOnl3+Wex396jJPeKr2H+8LJpxg0AB3ruy8=
+       "]]}}, {}}},
+  AspectRatio->Automatic,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None},
+  PlotRange->{{0, 1}, {0., 0.9999999795918367}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656070935165265*^9, {3.656071127114799*^9, 3.656071162066979*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Interval (0.5,0.77) R->R\n",
+ StyleBox["On this interval points are mapped from (0.5, 0.77) back onto \
+(0.5, 0.77), moving closer to the fixed point x=0.655, as stated in the \
+previous interval. ", "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsubsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656070935165265*^9, {3.656071127114799*^9, 3.656071205036006*^9}, {
+   3.656071261068529*^9, 3.656071271346574*^9}, 3.656071326111565*^9, {
+   3.65608083822859*^9, 3.65608091561031*^9}, {3.6560812001556597`*^9, 
+   3.6560812079868793`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2.9", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "10", ",", " ", "0.9"}], "]"}]], "Input",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656070935165265*^9, {3.656071127114799*^9, 3.656071205036006*^9}, {
+   3.656071261068529*^9, 3.656071271346574*^9}, {3.656071326111565*^9, 
+   3.6560713581956787`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1:eJxFxXss1AEcAPDDVnlOltPPjOiyYWKcNhWpRNJV7oiaZF7LKFq0rtqadJY8
+IlbRaXROJXMnKpXH4eZUdJw7brrunM77cjHHZh7VH77fPz77OMal0RMNSSQS
+7Z//n0icGhBMR/hvPll/Nk5FUA9tTjaVFTYSgfBe3x3cCiIc3t/vzX9EJMCC
+Z10+BUQGnJ2Vd+MBcQ9OyNARuUQpvK00pOrPfDX8od8rONieB0dlK0a68prg
+tIZr7k8XP8ILRUM9BgbtcE9Hd7v4YCeczAwxP6cVwh3GXht1l0VwDUe4brvn
+KxxAbn3BqO+F3UWK5m5XMSwNYMy9nuuHU01SJDJPCfxNHtlqUTgIM4Ki1BqN
+FN5XmRdZSRmCR9dLpJfuDMPjIWIOuUsO88tUzAHHEZh73yjX5eYPWB9/fibp
+swI2DcyhN9go4duW42bqaBVs1uZGGqaNwn7XT691reDs6nzObrYajomg9hmH
+jsHvZIklbUu4by/fcOLxL3jXsSR9SaAG9qH6FDdN4KqFgi8c1jis9Q5jEV4T
+sPOs+4zBIC6kZErSsybhh1JZPJ0yBesYgmJDIf42wvqo79VpmNOXXTFmNQMv
+i6JvWXXio8Xtessrs/DSwAHiroUWTi91EjBbcJs+J0tNzG+YIatbtVvHFy5W
+pSpq5+D2WB7L4qQO/iRODVWewt/7u26vD8Pr7LhsWiReLi9vzI/DM8/kqE2Y
+uFvABb+tNbgzz9Zo+BXuZC/vqXmD71ylhwc14Fuaj6ewWnC1B7XMaBBXPJ+P
+GZThcnMehSPHv8+68I8o8ZaXDqKsabyZ/DM/TIs3ssrpjjq8Nt5aKVjEuRIJ
+p2gZrzxclBy7grP5NA/PNfyJg6l+YwP/CxUIhds=
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1: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
+q1W+31B7IFkyzJyN9Nqgezy5bnxo+mBdIMrCSNWe83JlxIXNNSuPtoK68XZo
+5vHvcBv5FB9W8hXDDasVrkj3YN7ghP1VqWb4xKqVnnvVg2TZlV+qJuoxt1Zt
+ZufeXsztHmVe/vsJjl9y/ij97YXly1sbFzVVYGBf6lFW9g+U1MUrMlJe4+3+
+/BDpzULyXVtXOcLPx4u6o5vYW4SYPXhObplXPp5a6Mrm2QvxN32X746ePOQo
+ZSbaOZH+OW88nQZyEc+IL444ICR1W9Ziw/gjnN4Wyp12Toi+Gdwr7dIPoLfG
+1VwyS4jP03RPf1VJgWa+onjLAyHCO0y2HrJMhtpCxoesR0L0K4cy+y2TMO+P
+w3brQiEG+V7uAVaJkCjZcCTklRCm6dbrT1neAdfA6K54kxCT6O2rK1ZEg5XU
+v7fpixD+luNSlkciwZDK10hnCNEepzNw71AEPn/XKbBkCyHTMiPVck8YXt1X
+rgr8Rt7/cvwOrC6jZE57hH2PEEJzwyXLz15AcUi8g6pQiJelc8oNvM4i+6A8
+u/SnEK3Do6/EbH2Q2diYHj1CxuP0DUXenkhZG+21f4zEY8W6VX2b9iOxwM7A
+cFyIwjmTay7ZbcNt5elDExNC6Kk1/v9/yP8AtnOd9w==
+      "]]}}, {{}, {{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], Dashing[{Small, Small}],
+       LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQBWIQffYMCLyxR6d9kwQiLLdcwEn7NBaKGjx7iJNuTJiV
+3Hr/GU5aM/fwN+vXj3DSfvLJrzpzn+GknxUIcywseYyTPpbd9VZL7hlO2t3m
+7LV75x7jpHP5fmw6/OgpTvpT5tvttfxPMGgALme13Q==
+       "]]}}, {}}},
+  AspectRatio->Automatic,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None},
+  PlotRange->{{0, 1}, {0., 0.9999999795918367}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.656071347753295*^9, 3.6560713863327923`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Interval (0.77,1) R->L", "Subsubsection"],
+ "\n",
+ StyleBox["On this interval points are mapped from the right side to the left \
+side. It is important to note that the points are eventually mapped onto the \
+interval (0.5, 0.77), which we know iterates closer to the fixed point \
+x=0.655. ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["\n", "Text"],
+ "Global Dynamics\n",
+ StyleBox["Attracting Fixed Point: x=0.655\nRepelling Fixed Point: x=0\n\
+Characteristics: In general, points can map from the left to right and vice \
+versa. However, as soon as a point is mapped onto the closed interval \
+[0.5,0.77] they will stay on that interval and iterate toward x=0.655. ", 
+  "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.656071347753295*^9, 3.656071405931679*^9}, {
+   3.656081222004677*^9, 3.656081231011407*^9}, {3.6560813945955544`*^9, 
+   3.6560814872042217`*^9}, {3.6560816333760557`*^9, 3.656081652484006*^9}, {
+   3.656081735460019*^9, 3.656081813635055*^9}, {3.656081844651979*^9, 
+   3.656081871868354*^9}, 3.656128123968956*^9}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"5.", " ", "x"}], "\[Rule]", 
+   RowBox[{"3", "x", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", "x"}], ")"}], " ", "on", 
+    RowBox[{"{", 
+     RowBox[{"0", "<=", "x", "<=", "1"}], "}"}]}]}], "Section"]], "Text", \
+"Input",
+ CellChangeTimes->{{3.656039894552843*^9, 3.656039973026422*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cobweb", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"3", "#", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+    ",", " ", "1", ",", " ", "10", ",", " ", "0.21"}], "]"}], 
+  "\[IndentingNewLine]"}]], "Text", "Input",
+ CellChangeTimes->{{3.656039894552843*^9, 3.656039992087726*^9}, {
+  3.65607003194232*^9, 3.656070032354941*^9}, {3.6560714200843678`*^9, 
+  3.656071432910554*^9}, {3.6560893202284307`*^9, 3.656089320799262*^9}, {
+  3.656089354880107*^9, 3.656089373973999*^9}, {3.6560895633510103`*^9, 
+  3.656089616102067*^9}, {3.656092121624422*^9, 3.6560921218212433`*^9}, {
+  3.656092212995195*^9, 3.656092221725069*^9}}],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Interval", " ", 
+    RowBox[{"(", 
+     RowBox[{"0", ",", "0.21"}], ")"}], "  ", "L"}], "\[Rule]", "L"}], 
+  "Subsubsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+   "On", "  ", "the", " ", "interval", " ", "the", " ", "points", " ", "are", 
+    " ", "mapped", " ", "back", " ", "to", " ", "the", " ", "left", " ", 
+    StyleBox[
+     RowBox[{"side", ".", " ", "However"}], "Text"]}], ",", " ", 
+   RowBox[{
+    RowBox[{
+    "they", " ", "are", " ", "eventually", " ", "mapped", " ", "to", " ", 
+     "the", " ", "interval", " ", 
+     RowBox[{"(", 
+      RowBox[{"0.5", ",", " ", "0.78"}], ")"}], " ", "which", " ", "seems", 
+     " ", "to", " ", "slowly", " ", "iterate", " ", "towards", " ", "the", 
+     " ", "fixed", " ", "point", " ", "x"}], 
+    StyleBox[
+     StyleBox[
+      StyleBox["=", "Text",
+       FontColor->GrayLevel[0]], "Text",
+      FontColor->GrayLevel[0]], "Text",
+     FontColor->GrayLevel[0]], 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       StyleBox[
+        StyleBox[
+         StyleBox[
+          StyleBox["2", "Text",
+           FontColor->GrayLevel[0]], "Text",
+          FontColor->GrayLevel[0]], "Text",
+         FontColor->GrayLevel[0]], "Text",
+        FontColor->GrayLevel[0]], 
+       StyleBox[
+        StyleBox[
+         StyleBox[
+          StyleBox["/", "Text",
+           FontColor->GrayLevel[0]], "Text",
+          FontColor->GrayLevel[0]], "Text",
+         FontColor->GrayLevel[0]], "Text",
+        FontColor->GrayLevel[0]], 
+       StyleBox[
+        RowBox[{
+         StyleBox[
+          StyleBox[
+           StyleBox[
+            StyleBox["3", "Text",
+             FontColor->GrayLevel[0]], "Text",
+            FontColor->GrayLevel[0]], "Text",
+           FontColor->GrayLevel[0]], "Text",
+          FontColor->GrayLevel[0]], "."}]]}], "  ", "I", " ", "have", " ", 
+      "used", " ", "the", " ", "word", " ", "\"\<seems\>\"", " ", "due", " ", 
+      "to", " ", "the", " ", "fact", " ", "that", " ", "I", " ", "have", " ", 
+      "iterated", " ", "the", " ", "map", " ", "1000", " ", "times", " ", 
+      "and", " ", "it", " ", "only", " ", "moves", " ", "a", " ", "small", 
+      " ", "distances", " ", "closer", " ", "to", " ", "the", " ", "fixed", 
+      " ", 
+      RowBox[{"point", ".", "  ", "It"}], " ", "is", " ", "important", " ", 
+      "to", " ", "note", " ", "that", " ", "a", " ", "point", " ", "on", " ", 
+      "this", " ", "interval", " ", "may", " ", "map", " ", "to", " ", "x"}], 
+     "=", 
+     RowBox[{
+      RowBox[{
+      "0.21", " ", "which", " ", "maps", " ", "directly", " ", "to", " ", 
+       "the", " ", "fixed", " ", "point", " ", "x"}], "=", " ", 
+      RowBox[{
+       StyleBox[
+        StyleBox[
+         StyleBox[
+          StyleBox[
+           StyleBox["2", "Text",
+            FontColor->GrayLevel[0]], "Text",
+           FontColor->GrayLevel[0]], "Text",
+          FontColor->GrayLevel[0]], "Text",
+         FontColor->GrayLevel[0]], "Text",
+        FontColor->GrayLevel[0]], 
+       StyleBox[
+        StyleBox[
+         StyleBox[
+          StyleBox[
+           StyleBox["/", "Text",
+            FontColor->GrayLevel[0]], "Text",
+           FontColor->GrayLevel[0]], "Text",
+          FontColor->GrayLevel[0]], "Text",
+         FontColor->GrayLevel[0]], "Text",
+        FontColor->GrayLevel[0]], 
+       StyleBox[
+        RowBox[{
+         StyleBox[
+          StyleBox[
+           StyleBox[
+            StyleBox[
+             StyleBox[
+              StyleBox["3", "Text",
+               FontColor->GrayLevel[0]], "Text",
+              FontColor->GrayLevel[0]], "Text",
+             FontColor->GrayLevel[0]], "Text",
+            FontColor->GrayLevel[0]], "Text",
+           FontColor->GrayLevel[0]], "Text",
+          FontColor->GrayLevel[0]], "."}]], "  "}]}]}]}]}], "Text",
+  FontColor->GrayLevel[0]]}], "Subsection", "Input",
+ CellChangeTimes->{{3.656071577925355*^9, 3.656071611565901*^9}, 
+   3.656071746904108*^9, {3.656092240391779*^9, 3.656092438926537*^9}, {
+   3.656092603733122*^9, 3.656092605605384*^9}, {3.656123249844185*^9, 
+   3.6561232711115227`*^9}, {3.65612380215296*^9, 3.6561240225275373`*^9}, 
+   3.6561281655697393`*^9, {3.656128198264742*^9, 3.656128218967506*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Interval", " ", 
+    RowBox[{"(", 
+     RowBox[{"0.21", ",", "0.5"}], ")"}], "  ", "L"}], "\[Rule]", "R"}], 
+  "Subsubsection"], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+   "Points", " ", "on", " ", "this", " ", "interval", " ", "map", " ", "to", 
+    " ", "the", " ", "interval", " ", 
+    StyleBox[
+     RowBox[{"(", 
+      RowBox[{"0.5", ",", " ", "0.78"}], ")"}], "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["which", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["seems", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["to", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["iterate", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["closer", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["to", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["the", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["fixed", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["point", "Text"], 
+    StyleBox[" ", "Text"], 
+    StyleBox["x", "Text"]}], 
+   StyleBox["=", "Text"], 
+   StyleBox[" ", "Text"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{"2", "/", "3"}], " ", "as", " ", "stated", " ", 
+     RowBox[{"above", ".", " "}]}], "Text"]}],
+  FontColor->GrayLevel[0]]}], "Subsection", "Input",
+ CellChangeTimes->{{3.656071577925355*^9, 3.656071611565901*^9}, {
+  3.656071746904108*^9, 3.656071757642664*^9}, {3.656092461532963*^9, 
+  3.6560924999901953`*^9}, {3.656092598278329*^9, 3.65609260025499*^9}, {
+  3.656123274742105*^9, 3.656123276631138*^9}, {3.656123833479507*^9, 
+  3.65612383480709*^9}, {3.6561240474547997`*^9, 3.6561240495031443`*^9}, {
+  3.656128230512198*^9, 3.6561282414254932`*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "10", ",", " ", "0.78"}], "]"}]], "Input", "Input",
+ CellChangeTimes->{{3.656071577925355*^9, 3.6560716540202513`*^9}, {
+  3.6560919109924*^9, 3.65609191191006*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6560919193662443`*^9, 3.656091919377406*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Interval (0.5,0.78) R->R", "Subsubsection"],
+ "\n",
+ StyleBox["Points on this interval self-map back to itself (0.5,0.78) but \
+still iterate toward the fixed point x= 0.6667. We may note that this \
+interval will give the itinerary {RRRRR...}, which is similar to a fixed \
+point. ", "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.6560716434075603`*^9, 3.656071655228598*^9}, {
+  3.656071717796073*^9, 3.656071737091639*^9}, {3.656092509492737*^9, 
+  3.656092547302066*^9}, {3.6560925864765873`*^9, 3.656092588196954*^9}, {
+  3.656123712338572*^9, 3.6561237138055677`*^9}, {3.6561240695578957`*^9, 
+  3.6561240989589577`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0", 
+   ",", " ", "1", ",", " ", "10", ",", " ", "0.9"}], "]"}]], "Input", "Input",
+ 
+ CellChangeTimes->{{3.656070059749257*^9, 3.656070059760795*^9}, {
+  3.656071778543766*^9, 3.656071795270298*^9}, {3.6560718336851482`*^9, 
+  3.656071834107497*^9}, {3.6560919251834993`*^9, 3.656091926020979*^9}, {
+  3.6560932298250523`*^9, 3.656093241016492*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6560919323833237`*^9, 3.6560919323959227`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Interval (0.78, 1) R->L", "Subsubsection"],
+ "\n",
+ StyleBox["On this interval points are mapped back to the left side of the \
+interval.  They then follow the patterns discussed above on the intervals \
+(0,0.21) and (0.21, 0.5). Both of these intervals then map to the fixed point \
+x= 0.6667. ", "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.656071788532774*^9, 3.6560717968111*^9}, 
+   3.6560718364702463`*^9, {3.656072350292747*^9, 3.656072369731678*^9}, {
+   3.656092563936417*^9, 3.656092583086049*^9}, {3.656092632156447*^9, 
+   3.656092702511354*^9}, {3.656123724942711*^9, 3.656123726495016*^9}}],
+
+Cell[TextData[StyleBox["6. x\[Rule]3.1x(1-x) on{0<=x<=1}", "Subchapter"]], \
+"Text",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.6560399858714113`*^9, 3.656040043364897*^9}, {
+  3.6560400884254293`*^9, 3.656040128858903*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3.1", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0.5",
+    ",", " ", "0.9", ",", " ", "50", ",", " ", "0.2"}], "]"}]], "Input",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.6560399858714113`*^9, 3.656040043364897*^9}, {
+   3.6560400884254293`*^9, 3.656040149209887*^9}, {3.656070074223175*^9, 
+   3.656070104548012*^9}, {3.656070135918647*^9, 3.656070185212063*^9}, {
+   3.6560723887245827`*^9, 3.656072394395961*^9}, {3.65609282115998*^9, 
+   3.656092884261434*^9}, {3.656092915592946*^9, 3.6560929294220467`*^9}, 
+   3.6560932168729362`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Interval (0,0.2) L->L", "Subsubsection"],
+ "\n",
+ StyleBox["On this interval points are mapped from the left hand side back to \
+the left hand side of the map. However, it seems as if they are eventually \
+mapped to the interval (0.5,0.8), which we will look at later. ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox[" ", "Text"]
+}], "Subsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656040153540663*^9, {3.6560700777677383`*^9, 3.656070107245508*^9}, {
+   3.656070138362833*^9, 3.656070187281414*^9}, 3.656072398589999*^9, {
+   3.656072428759273*^9, 3.656072452677067*^9}, {3.656125778807362*^9, 
+   3.6561258432788143`*^9}, {3.6561259791506157`*^9, 
+   3.6561259805429277`*^9}, {3.6561263855580473`*^9, 3.656126392150896*^9}, 
+   3.656126853386527*^9}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3.1", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0.5",
+    ",", " ", "0.9", ",", " ", "50", ",", " ", "0.325"}], "]"}]], "Input",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656040153540663*^9, {3.6560700777677383`*^9, 3.656070107245508*^9}, {
+   3.656070138362833*^9, 3.656070187281414*^9}, 3.656072398589999*^9, {
+   3.656072428759273*^9, 3.656072452677067*^9}, {3.656125778807362*^9, 
+   3.6561258432788143`*^9}, {3.6561259791506157`*^9, 
+   3.6561259805429277`*^9}, {3.6561263855580473`*^9, 3.656126392150896*^9}, {
+   3.656126853386527*^9, 3.656126878005641*^9}, {3.656126934802183*^9, 
+   3.656126939463023*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Interval (0.2,0.5) L->R", "Subsubsection"],
+ "\n",
+ StyleBox["On this interval points are mapped from the left directly to the \
+right side of the interval. Once again points seem to settle down on the \
+interval (0.5,0.8). Yet, if we choose a point that maps close enough to the \
+fixed point, say x=0.325, we see that the oscillations grow back out! ", 
+  "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656040153540663*^9, {3.6560700777677383`*^9, 3.656070107245508*^9}, {
+   3.656070138362833*^9, 3.656070187281414*^9}, 3.656072398589999*^9, {
+   3.656072428759273*^9, 3.656072471657648*^9}, {3.656126396750636*^9, 
+   3.656126457910829*^9}, {3.656127002561928*^9, 3.65612706603115*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3.1", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0.5",
+    ",", " ", "0.9", ",", " ", "50", ",", " ", "0.6666"}], "]"}]], "Input",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656040153540663*^9, {3.6560700777677383`*^9, 3.656070107245508*^9}, {
+   3.656070138362833*^9, 3.656070187281414*^9}, 3.656072398589999*^9, {
+   3.656072428759273*^9, 3.656072541795826*^9}, {3.656092948160983*^9, 
+   3.656092956806159*^9}, {3.65609313419354*^9, 3.6560931753330936`*^9}, 
+   3.65609320564925*^9, {3.656127106167202*^9, 3.656127123421788*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1:eJxFxWlIkwEABuBvY2mUmXgUOrRpDQe2iERDwyvnQW2YNukgo4ZlqDO1FC3w
+niJqZbWkWRGKuHKLaSLqkAkNnUcub6ak+2zWTF2Uy6WEVj/63h8Pj7foZsI1
+OkEQgr/+nbR2lUEQxrD/+8T7nabRsPmNtZZOx9mpFQd2MHA5qQjetROr9LZM
+VydMV9R85LCwPLmrIz4ctzdmpDqU4/S8x0c4/fjwy0Nbv+1IaqXUWR/MxzOs
+LJWhGuvyuY/IMaxhC4sb9i9Qi1KWC7XncF+usTDuOZ5iRj84MYctLvsURs9P
+1P2GyAGLCPMDFtaTGvHDy3PswCVMzvCu9HNN1LMrzJYuMa4bPmNzfYu3I9bP
+jq5hjmSjdT1okfoCM4U5WYADY6Kkrho8EV7s1MP4TO31gfusLwpntvH8KyW4
+TNQ11D6II+Uvbkfs/kKtVZNex+OxwOf+xKIUl3gpZT8ncZ6ZI8pgmqk9Yt2C
+Yy9h7Waa52w9PnqXRZ824pjaKJu/9xI1K0e3unEdN1nUVpYcH1O729PMuChx
+0uMU9yv1HQktzCrGAaVVyfbteGO8UDr+C9/oNk0RQcvUTzOa3esKcE7nTPo9
+Db6YmDcUuo2J3lt+53kr1Am98/VjZbhjpbbshwQz3Xli5wpsypKHJlTi3INZ
+5GgNlpXTfUefYJLPbtPLcXT+tOzbK/y6qbJ0bwvO3loVxikxQ9VhG2nFHJfY
+kJFuXB22ybao8fc0haNjD+7WOhkFGszPNZS8f4dVDVVpq1rspg8R7unDc74N
+bIEOnxQKHcUDuLnIzlY9iB2UnfOKIZxpSNUND+M/VrODbQ==
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1: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
+      "]]}}, {{}, {{}, {}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.009166666666666668],
+       AbsoluteThickness[1.6], Dashing[{Small, Small}], 
+      LineBox[CompressedData["
+1:eJx1yltIk2EAh/EZzKAReaMuWk4rNjuBK7CIVnNdJDTIWRAYKg2XDVeL9Atc
+COXImkEQY+UyEWoOpKKitFqLYg48TLqIdJBu9Z3e700tndaWRtK6Lf4XD7+b
+p8jiqLSukMlk1kx/tTnmLg8fFff/a9+NPG1SQaDVwY59OUYRaj599YBGTaA1
+b6amG7aK0HC0zScvJVDv75e1yhwRurT+Qr7KTKAj6mP23bMCdHysPD5/lkAf
+xR92JAYFaI9fn/zlJVBPrrOlyCdA5YU/djW+JdDQYp1otAjQx3Vun26OQOtN
+0SPJDQLUX+zMYzZJUGllbDwwwUNnQrrW+8clqNo41J9/nYda21wHazwStGo2
+wLj0PPTF4ZvvbUMSNMtfqLj1jYNWPO+N3U5L0EhfU9ob4LBla79eK6DQ7siW
+SmLjoPZVyhnzXgrNXU5vDO7hoF0L0bDbTKH+ctPOp0oOuuYEXzZaS6Etzk/f
+72Vx0KqSbZ2pUxSaHdFOhuZZaGdX8/YHZyi03REutn9hoa53m6n2HIV2l15U
+BXkW+kGbihmaKFQTXac49JmFujV3r1xiKHSReX1Hn2ChyyllgeE8hTa2P9sh
+j7NQTaJk9ZPMhzxZYcg2TbJQz0/m40LmQ74asDQnJtj//ANEGFHU
+       "]]}}, {}}},
+  AspectRatio->Automatic,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.5, 0.26},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None},
+  PlotRange->{{0.5, 0.9}, {0.2790000202448977, 0.8999999918367347}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.6560929528073387`*^9, 3.656092958842289*^9}, {
+   3.656093137336137*^9, 3.6560932078433228`*^9}, 3.656126890625586*^9, {
+   3.6561271146360693`*^9, 3.656127125259976*^9}, 3.6561271598043337`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3.1", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", "0.5",
+    ",", " ", "0.9", ",", " ", "50", ",", " ", "0.8"}], "]"}]], "Input",
+ CellChangeTimes->{{3.656127161376753*^9, 3.656127170688196*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Interval (0.5,0.8) ", "Subsubsection"],
+ "\n",
+ StyleBox["This interval seems to be an attracting interval. We are left with \
+the possibility that the oscillations decrease if we can iterate long enough. \
+ However, if we choose a point close enough to the fixed point, say x=0.6666, \
+since our actual fixed point is x=2/3, we see that the oscillations increase \
+back out. ", "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.656072511361095*^9, 3.656072604219513*^9}, {
+  3.656126482422595*^9, 3.6561265077654057`*^9}, {3.6561271819211493`*^9, 
+  3.656127185989581*^9}, {3.656127247229822*^9, 3.65612736759114*^9}, {
+  3.65612745524619*^9, 3.656127458391046*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cobweb", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3.1", "#", " ", 
+     RowBox[{"(", 
+      RowBox[{"1", " ", "-", " ", "#"}], ")"}]}], " ", "&"}], ",", " ", 
+   "0.55", ",", " ", "0.9", ",", " ", "5", ",", " ", "0.9"}], "]"}]], "Input",\
+
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.656072511361095*^9, 3.65607262301196*^9}, {
+  3.656072657839303*^9, 3.656072673540018*^9}, {3.656072720782634*^9, 
+  3.656072732542342*^9}, {3.656092992463992*^9, 3.6560929926866293`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Interval (0.8,1) R->L", "Subsubsection"],
+ "\n",
+ StyleBox["On the final interval of the map points are mapped from the right \
+side to the left side. However, once again they are mapped onto the interval \
+(0.5,0.8). Yet, we can see that the iterates will oscillate out from only 5 \
+iterations.", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox[" \n", "Text"],
+ "Global Dynamics\n",
+ StyleBox["No matter where the iterations start, they are eventually mapped \
+onto the interval (0.5,0.8). Once on this interval they are eventually mapped \
+back out again. Most interestingly, the closer they are mapped to the fixed \
+point x=2/3 they faster the iterations map back out. ", "Text",
+  FontColor->GrayLevel[0]]
+}], "Subsection",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.656072624435666*^9, {3.656072669322541*^9, 3.656072676011217*^9}, {
+   3.656072723127522*^9, 3.6560727342904253`*^9}, {3.6560740130750437`*^9, 
+   3.65607402953957*^9}, {3.656127431368907*^9, 3.656127538693845*^9}, {
+   3.656127568854143*^9, 3.65612759243887*^9}, {3.65612764653517*^9, 
+   3.656127682919135*^9}, {3.656127722342206*^9, 3.65612780832721*^9}}]
+}, Open  ]]
+},
+WindowSize->{648, 624},
+WindowMargins->{{Automatic, -22}, {Automatic, 10}},
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1931, 31, 137, "Text"],
+Cell[2492, 53, 3039, 58, 114, "Input"],
+Cell[5534, 113, 1849, 26, 47, "Text"],
+Cell[7386, 141, 365, 9, 28, "Input"],
+Cell[7754, 152, 318, 8, 28, "Input"],
+Cell[8075, 162, 92, 1, 28, InheritFromParent],
+Cell[8170, 165, 316, 8, 28, "Input"],
+Cell[8489, 175, 321, 8, 28, "Input"],
+Cell[8813, 185, 2115, 33, 407, "Text"],
+Cell[10931, 220, 263, 3, 47, "Text"],
+Cell[11197, 225, 543, 11, 28, "Input"],
+Cell[11743, 238, 323, 8, 28, "Input"],
+Cell[12069, 248, 321, 8, 28, "Input"],
+Cell[12393, 258, 321, 8, 28, "Input"],
+Cell[12717, 268, 2221, 34, 578, "Text"],
+Cell[CellGroupData[{
+Cell[14963, 306, 250, 4, 45, "Subsubsection"],
+Cell[15216, 312, 666, 13, 28, "Input"],
+Cell[15885, 327, 93, 1, 28, InheritFromParent],
+Cell[15981, 330, 614, 12, 28, "Input"],
+Cell[16598, 344, 96, 1, 28, InheritFromParent]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16731, 350, 1264, 21, 130, "Subsubsection"],
+Cell[17998, 373, 348, 9, 28, "Input"],
+Cell[18349, 384, 372, 9, 28, "Input"],
+Cell[18724, 395, 92, 1, 28, InheritFromParent]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18853, 401, 607, 12, 73, "Subsubsection"],
+Cell[19463, 415, 370, 9, 28, "Input"],
+Cell[19836, 426, 410, 10, 46, "Input"],
+Cell[20249, 438, 297, 8, 28, "Input"],
+Cell[CellGroupData[{
+Cell[20571, 450, 324, 8, 28, "Input"],
+Cell[20898, 460, 8122, 147, 389, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29069, 613, 1057, 20, 154, "Subsubsection"],
+Cell[30129, 635, 325, 8, 28, "Input"]
+}, Open  ]],
+Cell[30469, 646, 1734, 31, 250, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[32228, 681, 624, 11, 50, "Section"],
+Cell[32855, 694, 1006, 18, 28, "Input"],
+Cell[33864, 714, 94, 1, 28, "Input"],
+Cell[33961, 717, 3284, 99, 107, "Text"],
+Cell[37248, 818, 1740, 48, 72, "Subsection"],
+Cell[CellGroupData[{
+Cell[39013, 870, 557, 11, 28, "Input"],
+Cell[39573, 883, 7956, 146, 389, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47566, 1034, 588, 13, 73, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[48179, 1051, 501, 13, 28, "Input"],
+Cell[48683, 1066, 7929, 145, 389, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56661, 1217, 1147, 23, 220, "Subsection"],
+Cell[57811, 1242, 334, 10, 49, "Text"],
+Cell[58148, 1254, 720, 15, 46, "Text"],
+Cell[58871, 1271, 4269, 112, 160, "Subsection"],
+Cell[63143, 1385, 1717, 48, 72, "Subsection"],
+Cell[64863, 1435, 380, 9, 28, "Input"],
+Cell[65246, 1446, 94, 1, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65377, 1452, 732, 15, 100, "Subsection"],
+Cell[66112, 1469, 532, 12, 28, "Input"],
+Cell[66647, 1483, 96, 1, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66780, 1489, 711, 14, 100, "Subsection"],
+Cell[67494, 1505, 253, 5, 47, "Text"],
+Cell[67750, 1512, 705, 15, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68492, 1532, 820, 17, 100, "Subsection"],
+Cell[69315, 1551, 783, 17, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70135, 1573, 797, 16, 119, "Subsection"],
+Cell[CellGroupData[{
+Cell[70957, 1593, 698, 15, 28, "Input"],
+Cell[71658, 1610, 6167, 115, 447, "Output"]
+}, Open  ]],
+Cell[77840, 1728, 328, 8, 28, InheritFromParent]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78205, 1741, 769, 15, 119, "Subsection"],
+Cell[78977, 1758, 525, 13, 28, "Input"]
+}, Open  ]],
+Cell[79517, 1774, 1187, 23, 201, "Subsection"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
